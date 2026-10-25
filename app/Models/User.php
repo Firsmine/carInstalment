@@ -24,6 +24,11 @@ class User extends Authenticatable
         'password'
     ];
 
+    public function validators()
+    {
+        return $this->hasMany(Validator::class, 'user_id');
+    }
+
     /**
      * Get the attributes that should be cast.
      *
